@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: MIT
  */
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
@@ -10,6 +11,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // Layer Definitions
+
 #define COLEMAK 0
 #define QWERTY 1
 #define GAMING_COLEMAK 2
@@ -23,6 +25,7 @@
 #define FN 10
 
 // Behavior configuration
+
 &mt {
     tapping-term-ms = <200>;
     quick_tap_ms = <0>;
@@ -44,7 +47,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-default {
+        default {
             // -----------------------------------------------------------------------------------------------------------------------------
             // |        |   Q    |   W    |     F     |     P     |     B     | # |     J     |    L     |    U    |    Y   |   '    |     |
             // | LAYERS | A/LGUI | R/LALT |  S/LCTRL  |  T/LSHFT  |     G     | # |     M     | N/LSHFT  | E/LCTRL | I/LALT | O/LGUI |     |
@@ -52,10 +55,10 @@ default {
             //                            | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
 
             bindings = <
-&trans  &kp Q       &kp W       &kp E        &kp R        &kp T      &kp Y        &kp U        &kp I        &kp O         &kp P          &trans
-&trans  &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G      &kp H        &mt LSHFT J  &mt LCTRL K  &mt LALT L    &mt LGUI SEMI  &trans
-&trans  &kp Z       &mt RALT X  &kp C        &kp V        &kp B      &kp N        &kp M        &kp COMMA    &mt RALT DOT  &kp FSLH       &trans
-                                &lt 2 ESC    &lt 1 SPACE  &kp TAB    &lt 4 ENTER  &lt 3 BSPC   &lt 5 DEL
+&trans      &kp Q       &kp W       &kp E        &kp R        &kp T      &kp Y        &kp U        &kp I        &kp O         &kp P          &none
+&trans      &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G      &kp H        &mt LSHFT J  &mt LCTRL K  &mt LALT L    &mt LGUI SEMI  &trans
+&kp K_LOCK  &kp Z       &mt RALT X  &kp C        &kp V        &kp B      &kp N        &kp M        &kp COMMA    &mt RALT DOT  &kp FSLH       &kp PRINTSCREEN
+                                    &lt 2 ESC    &lt 1 SPACE  &kp TAB    &lt 4 ENTER  &lt 3 BSPC   &lt 5 DEL
             >;
         };
 
