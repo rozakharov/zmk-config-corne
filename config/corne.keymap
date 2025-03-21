@@ -11,7 +11,7 @@
 
 // Layer Definitions
 #define DEFAULT 0
-#define QWERTY 1
+#define NAV 1
 #define MEDIA 2
 #define NUM 3
 #define SYM 4
