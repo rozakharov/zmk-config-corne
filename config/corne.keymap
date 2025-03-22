@@ -30,17 +30,17 @@
     require-prior-idle-ms = <125>;
 };
 
-behaviors {
-    kh_hs_tapdance: kh_hs_tapdance {
-        compatible = "zmk,behavior-tap-dance";
-        label = "KH_HS_TAPDANCE";
-        #binding-cells = <0>;
-        tapping-term-ms = <200>;
-        bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
-    };
-};
-
 / {
+    behaviors {
+        kh_hs_tapdance: kh_hs_tapdance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "KH_HS_TAPDANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
