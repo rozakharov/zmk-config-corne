@@ -50,7 +50,7 @@
             // |   ESC    |    Q    |   W    |    E    |     R     |   T   | # |    Y    |    U    |    I    |    O   |   P     |  [  |
             // |   TAB    | A/LCTRL | S/LOPT | D/LCOMM |  F/LSHFT  |   G   | # |    H    | J/LSHFT | K/LCOMM | L/LOPT | ;/LCTRL |  '  |
             // |  LANG/FN |    Z    | X/ROPT |    C    |     V     |   B   | # |    N    |    M    |    ,    | ./ROPT |   /     |  ]  |
-            //                               | ESC/NUM | SPACE/NAV |  TAB  | # |  ENTER  |  BSPC   | DEL/SYM |
+            //                               | ESC/NUM | SPACE/NAV | LCOMM | # |  ENTER  |  BSPC   | DEL/SYM |
 
             bindings = <
 &kp ESCAPE       &kp Q        &kp W       &kp E       &kp R        &kp T       &kp Y      &kp U        &kp I           &kp O         &kp P           &kp LBKT
@@ -62,8 +62,8 @@
 
         navigation {
             // --------------------------------------------------------------------------------------------
-            // |     |       |      |       |       |     | # | PSCRN | HOME |  UP  |  END  | PGUP  |     |
-            // |     | LCTRL | LOPT | LCOMM | LSHFT |     | # | CAPS  | LEFT | DOWN | RIGHT | PGDN  |     |
+            // |     |       |      |       |       |     | # |  INS  | HOME |  UP  |  END  | PGUP  |     |
+            // |     | LCTRL | LOPT | LCOMM | LSHFT |     | # |       | LEFT | DOWN | RIGHT | PGDN  |     |
             // |     |       | ROPT |       |       |     | # |       |      |      |       |       |     |
             //                      |       | HELD  |     | # | ENTER | BSPC | DEL  |
 
@@ -91,32 +91,32 @@
         };
 
         symbols {
-            // ---------------------------------------------------------------------------------
-            // |  `  |  !  |  @  |  #  |   $   |  %  | # |  ^   |  &   |  *  |  (  |  )  |  -  |
-            // |     |     |     |     |       |     | # |  -   |  =   |  [  |  ]  |  \  |  `  |
-            // |     |     |     |     |       |     | # |  _   |  +   |  {  |  }  | "|" |  ~  |
-            //                   | ESC | SPACE | TAB | # | HELD | BSPC | DEL |
+            // -----------------------------------------------------------------------------------
+            // |  `  |  !  |  @  |  #  |   $   |   %   | # |  ^   |  &   |  *  |  (  |  )  |  -  |
+            // |     |     |     |     |       |       | # |  -   |  =   |  [  |  ]  |  \  |  `  |
+            // |     |     |     |     |       |       | # |  _   |  +   |  {  |  }  | "|" |  ~  |
+            //                   | ESC | SPACE | LCOMM | # | HELD | BSPC | DEL |
 
             bindings = <
-&kp GRAVE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR  &kp RPAR  &kp MINUS
-&trans     &trans    &trans  &trans    &trans     &trans       &kp MINUS  &kp EQUAL  &kp LBKT    &kp RBKT  &kp BSLH  &kp GRAVE
-&trans     &trans    &trans  &trans    &trans     &trans       &kp UNDER  &kp PLUS   &kp LBRC    &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp ESC   &kp SPACE  &trans       &kp ENTER  &kp BSPC   &kp DELETE
+&kp GRAVE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp MINUS
+&trans     &trans    &trans  &trans    &trans     &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
+&trans     &trans    &trans  &trans    &trans     &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+                             &kp ESC   &kp SPACE  &trans       &kp ENTER  &kp BSPC   &kp DEL
             >;
         };
 
         function {
-            // ------------------------------------------------------------------------------------------
-            // |      |       |      |       |       | LOCK  | # |  F12  |  F7  |  F8  |  F9  |    |    |
-            // |      | LCTRL | LOPT | LCOMM | LSHFT | PSCRN | # |  F11  |  F4  |  F5  |  F6  |    |    |
-            // | HELD |       | ROPT |       |       |       | # |  F10  |  F1  |  F2  |  F3  |    |    |
-            //                       |  ESC  | SPACE |  TAB  | # | ENTER | BSPC | DEL  |
+            // -----------------------------------------------------------------------------------------------
+            // |      |       |      |       |       |       | # |  F12  |  F7  |  F8  |  F9  | LOCK  |      |
+            // |      | LCTRL | LOPT | LCOMM | LSHFT |       | # |  F11  |  F4  |  F5  |  F6  | PSCRN | CAPS |
+            // | HELD |       | ROPT |       |       |       | # |  F10  |  F1  |  F2  |  F3  |       |      |
+            //                       |  ESC  | SPACE | LCOMM | # | ENTER | BSPC | DEL  |
 
             bindings = <
-&trans  &trans     &trans    &trans    &trans     &kp LG(LC(Q))         &kp F12    &kp F7    &kp F8   &kp F9  &trans  &trans
-&trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &kp LS(LC(LG(N4)))    &kp F11    &kp F4    &kp F5   &kp F6  &trans  &trans
-&trans  &trans     &kp RALT  &trans    &trans     &none                 &kp F10    &kp F1    &kp F2   &kp F3  &trans  &trans
-                             &kp ESC   &kp SPACE  &trans                &kp ENTER  &kp BSPC  &kp DEL
+&trans  &trans     &trans    &trans    &trans     &trans    &kp F12    &kp F7    &kp F8   &kp F9  &kp LG(LC(Q))       &trans
+&trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &trans    &kp F11    &kp F4    &kp F5   &kp F6  &kp LS(LC(LG(N4)))  &kp CAPS
+&trans  &trans     &kp RALT  &trans    &trans     &trans    &kp F10    &kp F1    &kp F2   &kp F3  &trans              &trans
+                             &kp ESC   &kp SPACE  &trans    &kp ENTER  &kp BSPC  &kp DEL  
             >;
         };
     };
