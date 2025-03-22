@@ -16,6 +16,7 @@
 #define FN 4
 
 // Behavior configuration
+
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
@@ -52,10 +53,10 @@
             //                               | ESC/NUM | SPACE/NAV |  TAB  | # |  ENTER  |  BSPC   | DEL/SYM |
 
             bindings = <
-&kp ESCAPE       &kp Q        &kp W       &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I           &kp O         &kp P           &kp LBKT
-&kp TAB          &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHFT F  &kp G      &kp H      &mt LSHFT J  &mt LEFT_GUI K  &mt LALT L    &mt LCTRL SEMI  &kp SINGLE_QUOTE
-&lt 4 LC(SPACE)  &kp Z        &mt RALT X  &kp C       &kp V        &kp B      &kp N      &kp M        &kp COMMA       &mt RALT DOT  &kp FSLH        &kp RBKT
-                                          &lt 2 ESC   &lt 1 SPACE  &kp TAB    &kp ENTER  &kp BSPC     &lt 3 DEL
+&kp ESCAPE       &kp Q        &kp W       &kp E       &kp R        &kp T       &kp Y      &kp U        &kp I           &kp O         &kp P           &kp LBKT
+&kp TAB          &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHFT F  &kp G       &kp H      &mt LSHFT J  &mt LEFT_GUI K  &mt LALT L    &mt LCTRL SEMI  &kp SINGLE_QUOTE
+&lt 4 LC(SPACE)  &kp Z        &mt RALT X  &kp C       &kp V        &kp B       &kp N      &kp M        &kp COMMA       &mt RALT DOT  &kp FSLH        &kp RBKT
+                                          &lt 2 ESC   &lt 1 SPACE  &kp LGUI    &kp ENTER  &kp BSPC     &lt 3 DEL
             >;
         };
 
@@ -67,10 +68,10 @@
             //                      |       | HELD  |     | # | ENTER | BSPC | DEL  |
 
             bindings = <
-&trans  &trans     &trans    &trans    &trans     &trans    &kp INS       &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
-&trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &trans    &kp CAPSLOCK  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
-&trans  &trans     &kp RALT  &trans    &trans     &trans    &trans        &trans    &trans    &trans     &trans     &trans
-                             &trans    &trans     &trans    &kp ENTER     &kp BSPC  &kp DEL
+&trans  &trans     &trans    &trans    &trans     &trans    &kp INS    &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
+&trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &trans    &none      &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
+&trans  &trans     &kp RALT  &trans    &trans     &trans    &trans     &trans    &trans    &trans     &trans     &trans
+                             &trans    &trans     &trans    &kp ENTER  &kp BSPC  &kp DEL
             >;
         };
 
@@ -97,10 +98,10 @@
             //                   | ESC | SPACE | TAB | # | HELD | BSPC | DEL |
 
             bindings = <
-&kp GRAVE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp MINUS
-&trans     &trans    &trans  &trans    &trans     &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans     &trans    &trans  &trans    &trans     &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp ESC   &kp SPACE  &kp TAB      &kp ENTER  &kp BSPC   &trans
+&kp GRAVE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR  &kp RPAR  &kp MINUS
+&trans     &trans    &trans  &trans    &trans     &trans       &kp MINUS  &kp EQUAL  &kp LBKT    &kp RBKT  &kp BSLH  &kp GRAVE
+&trans     &trans    &trans  &trans    &trans     &trans       &kp UNDER  &kp PLUS   &kp LBRC    &kp RBRC  &kp PIPE  &kp TILDE
+                             &kp ESC   &kp SPACE  &trans       &kp ENTER  &kp BSPC   &kp DELETE
             >;
         };
 
@@ -115,7 +116,7 @@
 &trans  &trans     &trans    &trans    &trans     &kp LG(LC(Q))         &kp F12    &kp F7    &kp F8   &kp F9  &trans  &trans
 &trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &kp LS(LC(LG(N4)))    &kp F11    &kp F4    &kp F5   &kp F6  &trans  &trans
 &trans  &trans     &kp RALT  &trans    &trans     &none                 &kp F10    &kp F1    &kp F2   &kp F3  &trans  &trans
-                             &kp ESC   &kp SPACE  &kp TAB               &kp ENTER  &kp BSPC  &kp DEL
+                             &kp ESC   &kp SPACE  &trans                &kp ENTER  &kp BSPC  &kp DEL
             >;
         };
     };
