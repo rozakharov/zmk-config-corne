@@ -84,6 +84,7 @@
 &trans  &kp CARET              &kp AMPS             &kp LEFT_BRACKET               &kp RIGHT_BRACKET                 &kp GRAVE    &kp EQUAL  &kp N1    &mt COMMA N2  &mt DOT N3  &kp SLASH     &kp BACKSLASH
                                                     &kp ESC                        &kp SPACE                         &trans       &kp ENTER  &kp BSPC  &kp N0
             >;
+        };
 
         function {
             // -----------------------------------------------------------------------------------------------
