@@ -8,12 +8,14 @@
 #include <dt-bindings/zmk/keys.h>
 
 // Layer Definitions
+
 #define DEFAULT 0
 #define NAV 1
 #define NUM 2
 #define FN 3
 
 // Behavior configuration
+
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
@@ -49,10 +51,10 @@
             //                               | ESC/NUM | SPACE/NAV | LCOMM | # |  ENTER  |  BSPC   |   DEL   |
 
             bindings = <
-&kp ESCAPE       &kp Q        &kp W       &kp E       &kp R        &kp T       &kp Y      &kp U        &kp I           &kp O         &kp P           &tdb
-&kp TAB          &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHFT F  &kp G       &kp H      &mt LSHFT J  &mt LEFT_GUI K  &mt LALT L    &mt LCTRL SEMI  &kp SINGLE_QUOTE
-&lt 3 LC(SPACE)  &kp Z        &mt RALT X  &kp C       &kp V        &kp B       &kp N      &kp M        &kp COMMA       &mt RALT DOT  &kp FSLH        &kp BACKSLASH
-                                          &lt 2 ESC   &lt 1 SPACE  &kp LGUI    &kp ENTER  &kp BSPC     &lt 3 DEL
+&kp ESCAPE           &kp Q        &kp W       &kp E       &kp R        &kp T       &kp Y      &kp U        &kp I           &kp O         &kp P           &tdb
+&kp TAB              &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHFT F  &kp G       &kp H      &mt LSHFT J  &mt LEFT_GUI K  &mt LALT L    &mt LCTRL SEMI  &kp SINGLE_QUOTE
+&lt 3 LC(LA(SPACE))  &kp Z        &mt RALT X  &kp C       &kp V        &kp B       &kp N      &kp M        &kp COMMA       &mt RALT DOT  &kp FSLH        &kp BACKSLASH
+                                              &lt 2 ESC   &lt 1 SPACE  &kp LGUI    &kp ENTER  &kp BSPC     &kp DEL
             >;
         };
 
@@ -65,7 +67,7 @@
 
             bindings = <
 &trans  &trans     &trans    &trans    &trans     &trans    &kp LG(GRAVE)  &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
-&trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &trans    &none          &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
+&trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &trans    &kp GLOBE      &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
 &trans  &trans     &kp RALT  &trans    &trans     &trans    &none          &none     &none     &none      &trans     &trans
                              &trans    &trans     &trans    &kp ENTER      &kp BSPC  &kp DEL
             >;
@@ -81,7 +83,7 @@
             bindings = <
 &trans  &kp EXCL               &kp AT               &kp LEFT_BRACE                 &kp RIGHT_BRACE                   &kp PRCNT    &kp PLUS   &kp N7    &kp N8        &kp N9      &kp ASTERISK  &trans
 &trans  &mt LEFT_CONTROL HASH  &mt LEFT_ALT DOLLAR  &mt LEFT_GUI LEFT_PARENTHESIS  &mt LEFT_SHIFT RIGHT_PARENTHESIS  &kp UNDER    &kp MINUS  &kp N4    &kp N5        &kp N6      &kp COLON     &trans
-&trans  &kp CARET              &kp AMPS             &kp LEFT_BRACKET               &kp RIGHT_BRACKET                 &kp GRAVE    &kp EQUAL  &kp N1    &mt COMMA N2  &mt DOT N3  &kp SLASH     &kp BACKSLASH
+&none   &kp CARET              &kp AMPS             &kp LEFT_BRACKET               &kp RIGHT_BRACKET                 &kp GRAVE    &kp EQUAL  &kp N1    &mt COMMA N2  &mt DOT N3  &kp SLASH     &kp BACKSLASH
                                                     &kp ESC                        &kp SPACE                         &trans       &kp ENTER  &kp BSPC  &kp N0
             >;
         };
