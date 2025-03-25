@@ -44,32 +44,32 @@
         compatible = "zmk,keymap";
 
         default {
-            // --------------------------------------------------------------------------------------------------------------------------
-            // |   ESC    |    Q    |   W    |    E    |     R     |   T   | # |    Y    |    U    |    I    |    O   |   P     |  []   |
-            // |   TAB    | A/LCTRL | S/LOPT | D/LCOMM |  F/LSHFT  |   G   | # |    H    | J/LSHFT | K/LCOMM | L/LOPT | ;/LCTRL |   '   |
-            // |  LANG/FN |    Z    | X/ROPT |    C    |     V     |   B   | # |    N    |    M    |    ,    | ./ROPT |    /    |   \   |
-            //                               | ESC/NUM | SPACE/NAV | LCOMM | # |  ENTER  |  BSPC   |   DEL   |
+            // ---------------------------------------------------------------------------------------------------------------
+            // | ESC  |   Q    |   W   |   E   |    R    |    T    | # |    Y     |    U     |   I   |   O   |   P    |  []  |
+            // | TAB  | A/CTRL | S/OPT | D/CMD | F/LSHFT |    G    | # |    H     |  J/SHFT  | K/CMD | L/OPT | ;/CTRL |  '   |
+            // | LANG |   Z    |   X   |   C   |    V    |    B    | # |    N     |    M     |   ,   |   .   |   /    |  \   |
+            //                         |  NUM  |  SPACE  | TAB/CMD | # | ENTER/FN | BSPC/NAV |  DEL  |
 
             bindings = <
-&kp ESCAPE         &kp Q        &kp W       &kp E       &kp R        &kp T        &kp Y      &kp U        &kp I           &kp O         &kp P           &tdb
-&kp TAB            &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHFT F  &kp G        &kp H      &mt LSHFT J  &mt LEFT_GUI K  &mt LALT L    &mt LCTRL SEMI  &kp SINGLE_QUOTE
-&kp LA(LC(SPACE))  &kp Z        &mt RALT X  &kp C       &kp V        &kp B        &kp N      &kp M        &kp COMMA       &mt RALT DOT  &kp FSLH        &kp BACKSLASH
-                                            &lt 2 ESC   &lt 1 SPACE  &lt 3 TAB    &kp ENTER  &kp BSPC     &kp DEL
+&kp ESCAPE         &kp Q        &kp W       &kp E       &kp R        &kp T           &kp Y        &kp U        &kp I           &kp O         &kp P           &tdb
+&kp TAB            &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHFT F  &kp G           &kp H        &mt LSHFT J  &mt LEFT_GUI K  &mt LALT L    &mt LCTRL SEMI  &kp SINGLE_QUOTE
+&kp LA(LC(SPACE))  &kp Z        &kp X       &kp C       &kp V        &kp B           &kp N        &kp M        &kp COMMA       &kp DOT       &kp FSLH        &kp BSLH
+                                            &tog 2      &SPACE       &kp TAB LGUI    &lt 3 ENTER  &lt 1 BSPC   &kp DEL
             >;
         };
 
         navigation {
             // --------------------------------------------------------------------------------------------
             // |     |       |      |       |       |     | # | SWTCH | HOME |  UP  |  END  | PGUP  |     |
-            // |     | LCTRL | LOPT | LCOMM | LSHFT |     | # |       | LEFT | DOWN | RIGHT | PGDN  |     |
+            // |     | LCTRL | LOPT | LCOMM | LSHFT |     | # | GLOBE | LEFT | DOWN | RIGHT | PGDN  |     |
             // |     |       | ROPT |       |       |     | # |       |      |      |       |       |     |
-            //                      |       | HELD  |     | # | ENTER | BSPC | DEL  |
+            //                      |       |       |     | # |       | HELD |      |
 
             bindings = <
 &trans  &trans     &trans    &trans    &trans     &trans    &kp LG(GRAVE)  &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
 &trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &trans    &kp GLOBE      &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
-&trans  &trans     &kp RALT  &trans    &trans     &trans    &none          &none     &none     &none      &trans     &trans
-                             &trans    &trans     &trans    &kp ENTER      &kp BSPC  &kp DEL
+&trans  &trans     &kp RALT  &trans    &trans     &trans    &none          &none     &none     &trans     &trans     &trans
+                             &trans    &trans     &trans    &trans         &trans    &trans
             >;
         };
 
@@ -78,28 +78,28 @@
             // |     |    !    |    @   |    {    |    }    |   %   | # |   +   |  7   |  8   |   9   |  *  |     |
             // |     | #/LCTRL | $/LOPT | (/LCOMM | )/LSHFT |   _   | # |   -   |  4   |  5   |   6   |  :  |     |
             // |     |    ^    |    &   |    [    |    ]    |   `   | # |   =   |  1   |  2/, |  3/.  |  /  |  \  |
-            //                          |  HELD   |         |       | # | ENTER | BSPC |  0   |
+            //                          |  SWTCH  |  SPACE  |  TAB  | # | ENTER | BSPC |  0   |
 
             bindings = <
 &trans  &kp EXCL               &kp AT               &kp LEFT_BRACE                 &kp RIGHT_BRACE                   &kp PRCNT    &kp PLUS   &kp N7    &kp N8        &kp N9      &kp ASTERISK  &trans
 &trans  &mt LEFT_CONTROL HASH  &mt LEFT_ALT DOLLAR  &mt LEFT_GUI LEFT_PARENTHESIS  &mt LEFT_SHIFT RIGHT_PARENTHESIS  &kp UNDER    &kp MINUS  &kp N4    &kp N5        &kp N6      &kp COLON     &trans
-&none   &kp CARET              &kp AMPS             &kp LEFT_BRACKET               &kp RIGHT_BRACKET                 &kp GRAVE    &kp EQUAL  &kp N1    &mt COMMA N2  &mt DOT N3  &kp SLASH     &kp BACKSLASH
-                                                    &kp ESC                        &kp SPACE                         &trans       &kp ENTER  &kp BSPC  &kp N0
+&trans  &kp CARET              &kp AMPS             &kp LEFT_BRACKET               &kp RIGHT_BRACKET                 &kp GRAVE    &kp EQUAL  &kp N1    &mt COMMA N2  &mt DOT N3  &kp SLASH     &kp BACKSLASH
+                                                    &trans                         &trans                            &trans       &trans     &trans    &kp N0
             >;
         };
 
         function {
-            // -----------------------------------------------------------------------------------------------
-            // |      |       |      |       |       |       | # |  F12  |  F7  |  F8  |  F9  | LOCK  |      |
-            // |      | LCTRL | LOPT | LCOMM | LSHFT |       | # |  F11  |  F4  |  F5  |  F6  | PSCRN | CAPS |
-            // | HELD |       | ROPT |       |       |       | # |  F10  |  F1  |  F2  |  F3  |       |      |
-            //                       |  ESC  | SPACE | LCOMM | # | ENTER | BSPC | DEL  |
+            // --------------------------------------------------------------------------------------------
+            // |     |       |      |       |       |     | # |  F12  |  F7  |  F8  |  F9  | LOCK  |      |
+            // |     | LCTRL | LOPT | LCOMM | LSHFT |     | # |  F11  |  F4  |  F5  |  F6  | PSCRN | CAPS |
+            // |     |       | ROPT |       |       |     | # |  F10  |  F1  |  F2  |  F3  |       |      |
+            //                      |       |       |     | # | HELD  |      |      |
 
             bindings = <
 &trans  &trans     &trans    &trans    &trans     &trans    &kp F12    &kp F7    &kp F8   &kp F9  &kp LG(LC(Q))       &trans
 &trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &trans    &kp F11    &kp F4    &kp F5   &kp F6  &kp LS(LC(LG(N4)))  &kp CAPS
 &trans  &trans     &kp RALT  &trans    &trans     &trans    &kp F10    &kp F1    &kp F2   &kp F3  &trans              &trans
-                             &kp ESC   &kp SPACE  &trans    &kp ENTER  &kp BSPC  &kp DEL
+                             &trans    &trans     &trans    &trans     &trans    &trans
             >;
         };
     };
