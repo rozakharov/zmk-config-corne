@@ -38,23 +38,30 @@
             tapping-term-ms = <200>;
             bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
         };
+
+        tdm: td_marks {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp EXCL>, <&kp QUESTION>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
         default {
-            // ---------------------------------------------------------------------------------------------------------------
-            // | ESC  |   Q    |   W   |   E   |    R    |    T    | # |    Y     |    U     |   I   |   O   |   P    |  []  |
-            // | TAB  | A/CTRL | S/OPT | D/CMD | F/LSHFT |    G    | # |    H     |  J/SHFT  | K/CMD | L/OPT | ;/CTRL |  '   |
-            // | LANG |   Z    |   X   |   C   |    V    |    B    | # |    N     |    M     |   ,   |   .   |   /    |  \   |
-            //                         |  NUM  |  SPACE  | TAB/CMD | # | ENTER/FN | BSPC/NAV |  DEL  |
+            // ----------------------------------------------------------------------------------------------------------------
+            // | ESC  |   Q    |   W   |   E   |     R     |    T    | # |    Y     |    U     |   I   |   O   |   P    | NUM |
+            // | TAB  | A/CTRL | S/OPT | D/CMD |  F/LSHFT  |    G    | # |    H     |  J/SHFT  | K/CMD | L/OPT | ;/CTRL |  '  |
+            // | LANG |   Z    |   X   |   C   |     V     |    B    | # |    N     |    M     |   ,   |   .   |   /    |  \  |
+            //                         |  ESC  | SPACE/NUM | TAB/CMD | # | ENTER/FN | BSPC/NAV |  DEL  |
 
             bindings = <
-&kp ESCAPE         &kp Q        &kp W       &kp E             &kp R        &kp T           &kp Y        &kp U        &kp I           &kp O       &kp P           &tdb
-&kp TAB            &mt LCTRL A  &mt LALT S  &mt LGUI D        &mt LSHFT F  &kp G           &kp H        &mt LSHFT J  &mt LEFT_GUI K  &mt LALT L  &mt LCTRL SEMI  &kp SINGLE_QUOTE
-&kp LA(LC(SPACE))  &kp Z        &kp X       &kp C             &kp V        &kp B           &kp N        &kp M        &kp COMMA       &kp DOT     &kp FSLH        &kp BSLH
-                                            &mt SPACE ESCAPE  &lt 2 SPACE  &mt LGUI TAB    &lt 3 ENTER  &lt 1 BSPC   &mt BSPC DEL
+&kp ESCAPE         &kp Q        &kp W       &kp E       &kp R        &kp T           &kp Y        &kp U        &kp I           &kp O       &kp P           &tog 2
+&kp TAB            &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHFT F  &kp G           &kp H        &mt LSHFT J  &mt LEFT_GUI K  &mt LALT L  &mt LCTRL SEMI  &kp SINGLE_QUOTE
+&kp LA(LC(SPACE))  &kp Z        &kp X       &kp C       &kp V        &kp B           &kp N        &kp M        &kp COMMA       &kp DOT     &kp FSLH        &kp BSLH
+                                            &kp ESCAPE  &lt 2 SPACE  &mt LGUI TAB    &lt 3 ENTER  &lt 1 BSPC   &kp DEL
             >;
         };
 
@@ -75,16 +82,16 @@
 
         numbers {
             // ----------------------------------------------------------------------------------------------------
-            // |     |    !    |    @   |    {    |    }    |   %   | # |   +   |  7   |  8   |   9   |  *  |     |
-            // |     | #/LCTRL | $/LOPT | (/LCOMM | )/LSHFT |   _   | # |   -   |  4   |  5   |   6   |  :  |     |
-            // |     |    ^    |    &   |    [    |    ]    |   `   | # |   =   |  1   |  2/, |  3/.  |  /  |  \  |
-            //                          |  SWTCH  |  SPACE  |  TAB  | # | ENTER | BSPC |  0   |
+            // |     |    !    |    @   |    {    |    }    |   %   | # |   =   |  7   |  8   |   9   |  *  |     |
+            // |     | ^/LCTRL | &/LOPT | (/LCOMM | )/LSHFT |   _   | # |   -   |  4   |  5   |   6   |  :  |     |
+            // |     |    #    |    $   |    [    |    ]    |   `   | # |   +   |  1   |  2/, |  3/.  |  /  |  \  |
+            //                          |   ESC   |  HELD   |  TAB  | # | ENTER | BSPC |  0   |
 
             bindings = <
-&trans  &kp EXCL               &kp AT               &kp LEFT_BRACE                 &kp RIGHT_BRACE                   &kp PRCNT    &kp PLUS   &kp N7  &kp N8        &kp N9      &kp ASTERISK  &trans
-&trans  &mt LEFT_CONTROL HASH  &mt LEFT_ALT DOLLAR  &mt LEFT_GUI LEFT_PARENTHESIS  &mt LEFT_SHIFT RIGHT_PARENTHESIS  &kp UNDER    &kp MINUS  &kp N4  &kp N5        &kp N6      &kp COLON     &trans
-&trans  &kp CARET              &kp AMPS             &kp LEFT_BRACKET               &kp RIGHT_BRACKET                 &kp GRAVE    &kp EQUAL  &kp N1  &mt COMMA N2  &mt DOT N3  &kp SLASH     &kp BACKSLASH
-                                                    &trans                         &trans                            &trans       &trans     &trans  &kp N0
+&trans  &tdm             &kp AT         &kp LEFT_BRACE             &kp RIGHT_BRACE              &kp PRCNT    &kp EQUAL  &kp N7  &kp N8        &kp N9      &kp ASTERISK  &trans
+&trans  &mt LCTRL CARET  &mt LALT AMPS  &mt LGUI LEFT_PARENTHESIS  &mt LSHFT RIGHT_PARENTHESIS  &kp UNDER    &kp MINUS  &kp N4  &kp N5        &kp N6      &kp COLON     &trans
+&trans  &kp HASH         &kp DOLLAR     &kp LEFT_BRACKET           &kp RIGHT_BRACKET            &kp GRAVE    &kp PLUS   &kp N1  &mt COMMA N2  &mt DOT N3  &kp SLASH     &kp BACKSLASH
+                                        &trans                     &trans                       &trans       &trans     &trans  &kp N0
             >;
         };
 
