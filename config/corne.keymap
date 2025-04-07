@@ -51,14 +51,14 @@
         compatible = "zmk,keymap";
 
         default {
-            // ----------------------------------------------------------------------------------------------------------------
-            // | ESC  |   Q    |   W   |   E   |     R     |    T    | # |    Y     |    U     |   I   |   O   |   P    | NUM |
-            // | TAB  | A/CTRL | S/OPT | D/CMD |  F/LSHFT  |    G    | # |    H     |  J/SHFT  | K/CMD | L/OPT | ;/CTRL |  '  |
-            // | LANG |   Z    |   X   |   C   |     V     |    B    | # |    N     |    M     |   ,   |   .   |   /    |  \  |
+            // ------------------------------------------------------------------------------------------------------------------
+            // | ESC  |   Q    |   W   |   E   |     R     |    T    | # |    Y     |    U     |   I   |   O   |   P    | [\NUM |
+            // | TAB  | A/CTRL | S/OPT | D/CMD |  F/LSHFT  |    G    | # |    H     |  J/SHFT  | K/CMD | L/OPT | ;/CTRL |   '   |
+            // | LANG |   Z    |   X   |   C   |     V     |    B    | # |    N     |    M     |   ,   |   .   |   /    |   \   |
             //                         |  ESC  | SPACE/NUM | TAB/CMD | # | ENTER/FN | BSPC/NAV |  DEL  |
 
             bindings = <
-&kp ESCAPE         &kp Q        &kp W       &kp E       &kp R        &kp T           &kp Y        &kp U        &kp I           &kp O       &kp P           &tog 2
+&kp ESCAPE         &kp Q        &kp W       &kp E       &kp R        &kp T           &kp Y        &kp U        &kp I           &kp O       &kp P           &lt 2 LEFT_BRACKET
 &kp TAB            &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHFT F  &kp G           &kp H        &mt LSHFT J  &mt LEFT_GUI K  &mt LALT L  &mt LCTRL SEMI  &kp SINGLE_QUOTE
 &kp LA(LC(SPACE))  &kp Z        &kp X       &kp C       &kp V        &kp B           &kp N        &kp M        &kp COMMA       &kp DOT     &kp FSLH        &kp BSLH
                                             &kp ESCAPE  &lt 2 SPACE  &mt LGUI TAB    &lt 3 ENTER  &lt 1 BSPC   &kp DEL
